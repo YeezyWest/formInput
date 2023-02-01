@@ -5,33 +5,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/dist/output.css" rel="stylesheet">
-    <title>formInput</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="dist/output.css">
+    <title>Document</title>
 </head>
 
-<body>
-    <div class="py-20 px-5 flex justify-center items-center bg-gray-700">
-        <form
-            class="flex container items-center space-x-6 px-10 py-4 border-2 rounded-full border-green-600 shadow-2xl shadow-black">
-            <label class="block">
-                <span class="sr-only">Choose profile photo</span>
-                <input type="file" id="fileInput" class="block w-full text-sm text-white font-semibold
-                file:mr-4 file:py-2 file:px-4
-                file:rounded-full file:border-0
-                file:text-sm file:font-bold
-                file:bg-violet-50 file:text-violet-700
-                hover:file:bg-violet-100
-                " />
-            </label>
-        </form>
-        
+<body class="h-screen w-full flex items-center justify-center bg-slate-800">
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide flex justify-center items-center">
+                <div class="space-y-10">
+                    <h3 class="text-white text-5xl font-semibold">Hello 👋</h3>
+                    <button>
+                    <a href="upload.html" class="py-5 px-20 rounded-md bg-white font-semibold shadow-2xl shadow-black">Upload</a>
+                </button>
+                </div>
+            </div>
+            <div class="swiper-slide flex justify-center items-center">
+                <div class="">
+                    <h3 class="text-white text-5xl font-semibold">Welcome😎</h3>
+                </div>
+            </div>
+            <div class="swiper-slide flex justify-center items-center">
+                <div class="">
+                    <h3 class="text-white text-5xl font-semibold">About Us</h3>
+                </div>
+            </div>
+            
+        </div>
+        <div class="swiper-pagination"></div>
     </div>
-    <div id="previewContainer">
-    </div>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 
+    <script src="app.js"></script>
 </body>
-<script src="app.js"></script>
 
 </html>

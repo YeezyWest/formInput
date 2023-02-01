@@ -8,16 +8,26 @@ fileInput.addEventListener('change', function () {
 
     switch (fileType) {
         case 'image':
-            previewContainer.innerHTML = `<img src="${objectUrl}" class="h-10 w-10"/>`;
+            previewContainer.innerHTML = `<img src="${objectUrl}" class='h-52 w-52 object-contain'/>`;
             break;
         case 'video':
-            previewContainer.innerHTML = `<video src="${objectUrl}" class="h-10 w-10" controls />`;
+            previewContainer.innerHTML = `<video src="${objectUrl}" class='h-52 w-52' controls />`;
             break;
         case 'audio':
-            previewContainer.innerHTML = `<audio src="${objectUrl}" class="h-10 w-10" controls />`;
+            previewContainer.innerHTML = `<audio src="${objectUrl}" controls />`;
             break;
+            
         default:
             previewContainer.innerHTML = `<a href="${objectUrl}" target="_blank">${file.name}</a>`;
             break;
     }
 });
+
+
+var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
