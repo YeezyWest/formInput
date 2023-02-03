@@ -5,57 +5,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="/dist/output.css" rel="stylesheet">
     <title>formInput</title>
 </head>
 
 <body class="h-screen w-full flex items-center justify-center bg-slate-800">
- 
+
     <div class="absolute top-5 right-10">
         <a href="index.html">
-        <i class="fa-solid fa-house text-white text-3xl cursor-pointer"></i>
-         </a>
+            <i class="fa-solid fa-house text-white text-3xl cursor-pointer"></i>
+        </a>
     </div>
 
     <div class="relative flex items-center flex-col justify-center border-2 border-green-600 shadow-2xl shadow-black">
-        <form
-            class="flex flex-col container space-y-5 px-10 py-4">
+        <form class="flex flex-col container space-y-5 px-10 py-4" id="form">
             <div class="">
                 <label for="title" class="capitalize text-white font-semibold block">tile</label>
-                <input type="text" name="add" id="" class="input title">
+                <input type="text" name="add" id="title" class="input title">
             </div>
             <div class="">
                 <label for="description" class="block text-white capitalize font-semibold">description</label>
-                <textarea name="" id="" cols="30" rows="2" class="input"></textarea>
+                <textarea name="" id="description" cols="30" rows="2" class="input"></textarea>
             </div>
             <label class="block">
                 <span class="sr-only">Choose profile photo</span>
-                <input type="file" id="fileInput" class="block text-sm text-white font-semibold
+                <input type="file" name="file" id="file">
+                <!-- <input type="file" name="file" id="file" class="block text-sm text-white font-semibold
                 file:mr-4 file:py-2 file:px-4
                 file:rounded-full file:border-0
                 file:text-sm file:font-bold
                 file:bg-violet-50 file:text-violet-700
                 hover:file:bg-violet-100
-                " />
+                " /> -->
             </label>
+            <button type="submit" class="text-white text-lg text-center py-4  px-4 w-full bg-green-900">Submit</button>
         </form>
         <div class="text-white my-5 object-contain" id="previewContainer">
         </div>
 
-
-        <div class="text-white text-lg font-semibold text-center py-4  px-4 w-full rounded-2xl bg-green-900 absolute -bottom-24 cursor-pointer">
-            <a class="button" href="" > Submit</a>
-           </div> 
+        <!-- 
+        <div>
+            <a class="button" href="" class="text-white text-lg font-semibold text-center py-4  px-4 w-full rounded-2xl bg-green-900 absolute -bottom-24 cursor-pointer"> Submit</a>
+        </div> -->
     </div>
 
 
-   
 
 
 
+
+    <script src="./app.js"></script>
 </body>
-<script src="app.js"></script>
 
 </html>
-
