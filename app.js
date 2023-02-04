@@ -26,27 +26,39 @@ fileInput.addEventListener("change", () => {
       break;
   }
 });
-button.addEventListener('click', async () => {
-    const titleValue = titleInput.value.trim();
-    const descriptionValue = descriptionInput.value.trim();
-    const formData = new FormData();
-    formData.append('title', titleValue);
-    formData.append('description', descriptionValue);
-    formData.append('file', fileInput.files[0]);
-  
-    try {
-      const response = await fetch(URL, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        },
-        body: formData
-      });
-      const data = await response.json();
-      localStorage.setItem('data', JSON.stringify(data));
-      window.location.href = './review1.html';
-    } catch (error) {
-      console.error(error);
-    }
-  });
-  
+// button.addEventListener('click', async () => {
+//     const titleValue = titleInput.value.trim();
+//     const descriptionValue = descriptionInput.value.trim();
+//     const formData = new FormData();
+//     formData.append('title', titleValue);
+//     formData.append('description', descriptionValue);
+//     formData.append('file', fileInput.files[0]);
+
+//     try {
+//       const response = await fetch(URL, {
+//         method: 'PUT',
+//         headers: {
+//           'Content-Type': 'multipart/form-data'
+//         },
+//         body: formData
+//       });
+//       const data = await response.json();
+//       localStorage.setItem('data', JSON.stringify(data));
+//       window.location.href = './review1.html';
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   });
+
+document.getElementById("form").addEventListener("submit", function (event) {
+  event.preventDefault();
+  const formData = new FormData();
+  formData.append("title", document.getElementById("title").value);
+  formData.append("description", document.getElementById("description").value);
+  formData.append("file", document.getElementById("file").files[0]);
+  sessionStorage.setItem(
+    "formData",
+    JSON.stringify(Array.from(formData.entries()))
+  );
+  window.location.href = "./review1.html";
+});
