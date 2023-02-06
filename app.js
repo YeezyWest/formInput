@@ -18,7 +18,7 @@ fileInput.addEventListener("change", () => {
       previewContainer.innerHTML = `<video src="${objectUrl}" class='h-52 w-52' controls />`;
       break;
     case "audio":
-      previewContainer.innerHTML = `<audio src="${objectUrl}" controls />`;
+      previewContainer.innerHTML = `<audio src="${objectUrl}" class='h-52 w-52' controls />`;
       break;
 
     default:
@@ -50,8 +50,8 @@ fileInput.addEventListener("change", () => {
 //     }
 //   });
 
-document.getElementById("form").addEventListener("submit", function (event) {
-  event.preventDefault();
+document.getElementById("form").addEventListener("submit", (e) => {
+  e.preventDefault();
   const formData = new FormData();
   formData.append("title", document.getElementById("title").value);
   formData.append("description", document.getElementById("description").value);
@@ -59,6 +59,8 @@ document.getElementById("form").addEventListener("submit", function (event) {
   sessionStorage.setItem(
     "formData",
     JSON.stringify(Array.from(formData.entries()))
+    
   );
   window.location.href = "./review1.html";
+ 
 });
